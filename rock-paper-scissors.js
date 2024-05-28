@@ -27,7 +27,7 @@ function playRound(humanChoice, computerChoice) {
     if(humanChoice === "r" && computerChoice === "Rock"){
         console.log("This round was a draw")
     }else if(humanChoice === "r" && computerChoice === "Paper"){
-        humanScore += 1;
+        computerScore += 1;
         console.log("You lost!")
     }
 
