@@ -20,7 +20,6 @@ function getHumanChoice() {
     
     if(humanChoice.toLowerCase() === "r"){
         console.log("You chose: Rock");
-        return humanChoice;
     }
 }
 
