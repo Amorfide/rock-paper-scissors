@@ -1,5 +1,9 @@
 function getRounds() {
-    const number = prompt("How many rounds would you like to play?");
+    let number = prompt("How many rounds would you like to play?");
+    while(number %1 !== 0){
+        alert("You did not enter a valid number");
+        number = prompt("How many rounds would you like to play?");
+    }
     return number;
 }
 
