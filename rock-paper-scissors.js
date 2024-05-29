@@ -26,8 +26,14 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
+    let rpsChoices = ["r","p","s"];
     let rps = prompt("Please choose Rock (r), Paper (p) or Scissors (s)");
     
+    while(!rpsChoices.includes(rps)){
+        alert("You did not enter a valid choice");
+        rps = prompt("Please put a valid choice, r, p, s");
+    }
+
     if(rps.toLowerCase() === "r"){
         rps = "Rock";
         console.log("You chose: Rock");
@@ -40,6 +46,7 @@ function getHumanChoice() {
     }
     return rps;
 }
+
 
 function playRound(humanChoice, computerChoice) {
     if(humanChoice === computerChoice){
