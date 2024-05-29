@@ -1,3 +1,8 @@
+function getRounds() {
+    const number = prompt("How many rounds would you like to play?");
+    return number;
+}
+
 function getComputerChoice() {
     //return a random choice of rock, paper scissors
     const computerRoll = Math.floor(Math.random()*3); //start by using some random function
@@ -49,10 +54,14 @@ function playRound(humanChoice, computerChoice) {
 let humanScore = 0;
 let computerScore = 0;
 
-const computerChoice = getComputerChoice();
-console.log (computerChoice);
+const rounds = getRounds();
+
+for(i=1; i<= rounds; i++){
 
 const humanChoice = getHumanChoice();
-console.log(humanChoice);
+
+const computerChoice = getComputerChoice();
 
 playRound(humanChoice, computerChoice);
+
+}
