@@ -51,14 +51,23 @@ function getHumanChoice() {
 function playRound(humanChoice, computerChoice) {
     if(humanChoice === computerChoice){
         console.log("This round was a draw");
+        console.log("You: " + humanScore + " " + computerScore + " Computer")
     }else if(humanChoice === "Rock" && computerChoice === "Scissors"){
         console.log("You won this round!");
+        humanScore += 1;
+        console.log("You: " + humanScore + " " + computerScore + " Computer")
     }else if(humanChoice === "Scissors" && computerChoice === "Paper"){
         console.log("You won this round!");
+        humanScore += 1;
+        console.log("You: " + humanScore + " " + computerScore + " Computer")
     }else if(humanChoice === "Paper" && computerChoice === "Rock"){
         console.log("You won this round!");
+        humanScore += 1;
+        console.log("You: " + humanScore + " " + computerScore + " Computer")
     }else{
         console.log("You lost this round");
+        computerScore += 1;
+        console.log("You: " + humanScore + " " + computerScore + " Computer")
     }
 }
 
@@ -70,7 +79,6 @@ const rounds = getRounds();
 for(i=1; i<= rounds; i++){
 
 const humanChoice = getHumanChoice();
-
 const computerChoice = getComputerChoice();
 
 playRound(humanChoice, computerChoice);
