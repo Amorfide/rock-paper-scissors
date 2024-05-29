@@ -3,44 +3,56 @@ function getComputerChoice() {
     const computerRoll = Math.floor(Math.random()*3); //start by using some random function
     switch(computerRoll){
         case 0:
-            computerChoice = "Rock";
+            computerRPS = "Rock";
             break;
         case 1:
-            computerChoice = "Paper";
+            computerRPS = "Paper";
             break;
         case 2:
-            computerChoice = "Scissors" ;
+            computerRPS = "Scissors" ;
             break;
     }
-    console.log("Computer chose: " + computerChoice);
+    console.log("Computer chose: " + computerRPS);
+    return computerRPS;
 }
 
 function getHumanChoice() {
-    humanChoice = prompt("Please choose Rock (r), Paper (p) or Scissors (s)");
+    let rps = prompt("Please choose Rock (r), Paper (p) or Scissors (s)");
     
-    if(humanChoice.toLowerCase() === "r"){
+    if(rps.toLowerCase() === "r"){
+        rps = "Rock";
         console.log("You chose: Rock");
+    }else if(rps.toLowerCase() === "s"){
+        rps = "Scissors";
+        console.log("You chose: Scissors");
+    }else if(rps.toLowerCase() === "p"){
+        rps = "Paper";
+        console.log("You chose: Paper");
     }
+    return rps;
 }
 
 function playRound(humanChoice, computerChoice) {
-    if(humanChoice === "r" && computerChoice === "Rock"){
-        console.log("This round was a draw")
-    }else if(humanChoice === "r" && computerChoice === "Paper"){
-        computerScore += 1;
-        console.log("You lost!")
+    if(humanChoice === computerChoice){
+        console.log("This round was a draw");
+    }else if(humanChoice === "Rock" && computerChoice === "Scissors"){
+        console.log("You won this round!");
+    }else if(humanChoice === "Scissors" && computerChoice === "Paper"){
+        console.log("You won this round!");
+    }else if(humanChoice === "Paper" && computerChoice === "Rock"){
+        console.log("You won this round!");
+    }else{
+        console.log("You lost this round");
     }
-
 }
 
 let humanScore = 0;
 let computerScore = 0;
 
-let computerChoice = "";
-let humanChoice = "";
+const computerChoice = getComputerChoice();
+console.log (computerChoice);
 
-getHumanChoice();
+const humanChoice = getHumanChoice();
 console.log(humanChoice);
-getComputerChoice();
-console.log(computerChoice)
+
 playRound(humanChoice, computerChoice);
